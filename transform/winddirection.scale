@@ -1,0 +1,10 @@
+[..25]     = Norden
+]25..65[   = Nordosten
+]65..115[  = Osten
+]115..150] = Südosten
+[160..200] = Süden
+[210..240] = Südwesten
+[250..290] = Westen
+[300..330] = Nordwesten
+[340..360] = Norden
+[..]       = undefiniert

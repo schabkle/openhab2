@@ -1,0 +1,5 @@
+sitemap System label="System" {
+    
+    Group item=gPiHole label="Pi-Hole" icon="pihole"
+
+}

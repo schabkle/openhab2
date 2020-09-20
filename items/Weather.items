@@ -1,0 +1,49 @@
+Group					gAir																											
+Number					Air_AqiLevel				"AQI"											<flow>			(gAir)			{channel="airquality:aqi:local:aqiLevel"}	
+String					Air_AqiDescription			"AQI Level [MAP(airquality.map):%s]"			<flow>			(gAir)			{channel="airquality:aqi:local:aqiDescription"}	
+Number					Air_Pm25					"Pm2.5"											<line>			(gAir)			{channel="airquality:aqi:local:pm25"}	
+Number					Air_Pm10					"Pm10"											<line>			(gAir)			{channel="airquality:aqi:local:pm10"}	
+Number					Air_No2						"NO2"											<line>			(gAir)			{channel="airquality:aqi:local:no2"}	
+Number					Air_Co						"CO"											<carbondioxide>	(gAir)			{channel="airquality:aqi:local:co"}	
+Number					Air_So2						"SO2"											<line>			(gAir)			{channel="airquality:aqi:local:so2"}	
+String					Air_StationName				"Name"											<maps>			(gAir)			{channel="airquality:aqi:local:locationName"}	
+Location				Air_StationLocation			"Ort"											<maps>			(gAir)			{channel="airquality:aqi:local:stationLocation"}	
+DateTime				Air_ObservationTime			"Letzte messung [%1$tH:%1$tM]"					<time>			(gAir)			{channel="airquality:aqi:local:observationTime"}	
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Group					gUv																												
+Number					Uv_Index					"UV index"										<sun>			(gUv)			{channel="openuv:uvreport:local:UVIndex"}	
+Color					Uv_Color					"UV color"										<colorlight>	(gUv)			{channel="openuv:uvreport:local:UVColor"}	
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Group					gWeather																										
+String					Weather_StationName			"Name"											<maps>			(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:station#name"}	
+Location				Weather_StationLocation		"Ort"											<maps>			(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:station#location"}	
+DateTime				Weather_ObservationTime		"Letzte messung [%1$tH:%1$tM]"					<time>			(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#time-stamp"}	
+String					Weather_Condition			"Wetterlage"									<sun>			(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#condition"}	
+Number:Temperature		Weather_Temperature			"Temperatur"									<temperature>	(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#temperature"}	
+Number:Temperature		Weather_ApparentTemperature	"Gefühlte Temperatur"							<temperature>	(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#apparent-temperature"}	
+Number:Pressure			Weather_Pressure			"Luftdruck"										<pressure>		(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#pressure"}	
+Number:Dimensionless	Weather_Humidity			"Luftfeuchtigkeit"								<humidity>		(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#humidity"}	
+Number:Speed			Weather_WindSpeed			"Windgeschwindigkeit"							<wind>			(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#wind-speed"}	
+Number:Angle			Weather_WindDirection		"Windrichtung [SCALE(winddirection.scale):%s]"	<wind>			(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#wind-direction"}	
+Number:Dimensionless	Weather_Cloudiness			"Bewölkung"										<sun_clouds>	(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#cloudiness"}	
+Number:Length			Weather_Rain				"Regen"											<rain>			(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#rain"}	
+Number:Length			Weather_Snow				"Schnee"										<snow>			(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#snow"}	
+Number:Length			Weather_Visibility			"Sichtweite"									<smoke>			(gWeather)		{channel="openweathermap:weather-and-forecast:94b815f6:local:current#visibility"}	
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Group					gMoon																											
+DateTime				Moon_Rise					"Mondaufgang [%1$tH:%1$tM]"						<sunrise>			(gMoon)			{channel="astro:moon:local:rise#start"}	
+DateTime				Moon_Set					"Monduntergang [%1$tH:%1$tM]"					<sunset>			(gMoon)			{channel="astro:moon:local:set#start"}	
+DateTime				Moon_PhaseFull				"Vollmond [%1$td.%1$tm.%1$ty]"										<time>			(gMoon)			{channel="astro:moon:local:phase#full"}	
+DateTime				Moon_PhaseNew				"Neumond [%1$td.%1$tm.%1$ty]"										<time>			(gMoon)			{channel="astro:moon:local:phase#new"}	
+String					Moon_PhaseName				"Mondphase "										<moon>			(gMoon)			{channel="astro:moon:local:phase#name"}	
+String					Moon_ZodiacSign				"Sternzeichen"									<zodiac>			(gMoon)			{channel="astro:moon:local:zodiac#sign"}	
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Group					gSun																											
+DateTime				Sun_Rise					"Sonnenaufgang [%1$tH:%1$tM]"					<sunrise>		(gSun)			{channel="astro:sun:local:rise#start"}	
+DateTime				Sun_Set						"Sonnenuntergang [%1$tH:%1$tM]"					<sunset>		(gSun)			{channel="astro:sun:local:set#start"}	
+Number:Intensity		Sun_RadiationDirect			"Direkte strahlung"								<solarplant>	(gSun)			{channel="astro:sun:local:radiation#direct"}	
+Number:Intensity		Sun_RadiationDiffuse		"Diffuse strahlung"								<solarplant>	(gSun)			{channel="astro:sun:local:radiation#diffuse"}	
+Number:Intensity		Sun_RadiationTotal			"Gesamtstrahlung"								<solarplant>	(gSun)			{channel="astro:sun:local:radiation#total"}	
+String					Sun_ZodiacSign				"Sternzeichen"									<zodiac>		(gSun)			{channel="astro:sun:local:zodiac#sign"}	
+String					Sun_SeasonName				"Jahreszeit"									<seasons>		(gSun)			{channel="astro:sun:local:season#name"}	
+String					Sun_PhaseName				"Sonnenphase"									<sun>			(gSun)			{channel="astro:sun:local:phase#name"}	

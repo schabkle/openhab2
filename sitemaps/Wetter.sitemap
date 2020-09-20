@@ -1,0 +1,86 @@
+sitemap Wetter label="Wetter"{
+    Group item=gAir label="Luft" icon="flow" {
+        Frame {
+            Text item=Air_AqiLevel valuecolor=[
+                    Air_Level=="-"="lightgray",
+                    Air_Level>=300="#7e0023",
+                             >=201="#660099",
+                             >=151="#cc0033",
+                             >=101="#ff9933",
+                             >=51="#ffde33",
+                             >=0="#009966"
+                ]
+            Text item=Air_AqiDescription valuecolor=[
+                    Air_Description=="HAZARDOUS"="#7e0023",
+                    =="VERY_UNHEALTHY"="#660099",
+                    =="UNHEALTHY"="#cc0033",
+                    =="UNHEALTHY_FOR_SENSITIVE"="#ff9933",
+                    =="MODERATE"="#ffde33",
+                    =="GOOD"="#009966"
+                ]
+        }
+        Frame label="Werte" {
+            Text item=Air_Pm25
+            Text item=Air_Pm10
+            Text item=Air_No2
+            Text item=Air_Co
+            Text item=Air_So2
+        }
+        Frame label="Station Location" {
+            Text item=Air_StationName
+            Text item=Air_ObservationTime
+            Mapview item=Air_StationLocation height=10
+        }
+    }
+    Group item=gWeather  label="Wetter"     icon="sun_clouds" {
+        Frame {
+            Text item=Weather_Temperature
+            Text item=Weather_ApparentTemperature
+        }
+        Frame label="Werte" {
+            Text item=Weather_Condition
+            Text item=Weather_Pressure
+            Text item=Weather_Humidity
+            Text item=Weather_WindSpeed
+            Text item=Weather_WindDirection
+            Text item=Weather_Cloudiness
+            Text item=Weather_Rain
+            Text item=Weather_Snow
+            Text item=Weather_Visibility
+        }
+        Frame label="Station Location" {
+            Text item=Weather_StationName
+            Text item=Weather_ObservationTime
+            Mapview item=Weather_StationLocation height=10
+        }
+        
+    }
+    Group item=gSun  label="Sonne"     icon="sun" {
+        Frame {
+            Text item=Sun_Rise
+            Text item=Sun_Set
+            Text item=Sun_ZodiacSign
+        }
+        Frame label="Sonneneinstrahlung"{
+            Text item=Sun_RadiationDirect
+            Text item=Sun_RadiationDiffuse
+            Text item=Sun_RadiationTotal
+        }
+        Frame label="Sonnenphasen"{
+            Text item=Sun_PhaseName
+            Text item=Sun_SeasonName
+        }
+    }
+    Group item=gMoon  label="Mond"     icon="moon" {
+        Frame {
+            Text item=Moon_Rise
+            Text item=Moon_Set
+            Text item=Moon_ZodiacSign
+        }
+        Frame label="Mondphasen"{
+            Text item=Moon_PhaseFull
+            Text item=Moon_PhaseNew
+            Text item=Moon_PhaseName
+        }
+    }
+}
