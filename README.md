@@ -1,2 +1,0 @@
-# OpenHAB
-# openhab2
